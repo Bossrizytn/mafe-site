@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mafe Health · Mafe Studio</title>
+<meta name="description" content="A patient coordinator for health-tourism clinics that replies on WhatsApp in six languages, at any hour.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Instrument+Serif:ital@1&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+/* ============ Mafe Health — V5 "Gallery" — root tokens ============ */
+#mfa-v5{
+  --mfa-bg:#FFFFFF;
+  --mfa-surface:#F7F7F7;
+  --mfa-ink:#0D0D0D;
+  --mfa-muted:#6E6E80;
+  --mfa-line:rgba(13,13,13,.10);
+  --mfa-line-2:rgba(13,13,13,.16);
+  --mfa-accent:#E5553B;
+  --mfa-font:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mfa-serif:'Instrument Serif',Georgia,serif;
+  --mfa-mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,monospace;
+  --mfa-ease:cubic-bezier(.22,1,.36,1);
+  --mfa-t:700ms;
+  --mfa-h:250ms;
+  background-color:var(--mfa-bg);
+  background-image:radial-gradient(rgba(13,13,13,.05) 1px,transparent 1px);
+  background-size:28px 28px;
+  color:var(--mfa-ink);
+  font-family:var(--mfa-font);
+  font-size:16.5px;
+  line-height:1.65;
+  overflow-x:clip;
+  min-height:5126px;
+  -webkit-font-smoothing:antialiased;
+}
+#mfa-v5 *,#mfa-v5 *::before,#mfa-v5 *::after{box-sizing:border-box;}
+#mfa-v5 h1,#mfa-v5 h2,#mfa-v5 h3,#mfa-v5 p,#mfa-v5 ul,#mfa-v5 ol,#mfa-v5 li,#mfa-v5 figure,#mfa-v5 figcaption{margin:0;}
+#mfa-v5 ul,#mfa-v5 ol{list-style:none;padding:0;}
+#mfa-v5 a{color:inherit;text-decoration:none;}
+#mfa-v5 button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;}
+#mfa-v5 a:focus-visible,#mfa-v5 button:focus-visible{outline:2px solid var(--mfa-ink);outline-offset:3px;border-radius:2px;}
+#mfa-v5 ::selection{background:var(--mfa-ink);color:#FFFFFF;}
+
+/* ============ Seal (monogram) ============ */
+#mfa-v5 .mfa-seal{color:var(--mfa-ink);display:block;}
+
+/* ============ Nav ============ */
+#mfa-v5 .mfa-nav{
+  position:sticky;top:0;z-index:30;height:64px;
+  background:rgba(255,255,255,.88);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--mfa-line-2);
+}
+#mfa-v5 .mfa-nav-in{
+  max-width:1200px;height:100%;margin:0 auto;padding:0 24px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+}
+#mfa-v5 .mfa-brand{display:flex;align-items:center;gap:11px;font-size:17px;font-weight:500;letter-spacing:-.01em;}
+#mfa-v5 .mfa-nav-links{display:flex;align-items:center;gap:30px;font-size:14px;color:var(--mfa-muted);}
+#mfa-v5 .mfa-nav-links a{transition:color var(--mfa-h) ease;}
+#mfa-v5 .mfa-nav-links a:hover{color:var(--mfa-ink);}
+#mfa-v5 .mfa-nav-right{display:flex;align-items:center;gap:20px;}
+#mfa-v5 .mfa-lang{font-family:var(--mfa-mono);font-size:12px;letter-spacing:.08em;color:var(--mfa-muted);white-space:nowrap;}
+#mfa-v5 .mfa-lang b{font-weight:400;color:var(--mfa-ink);}
+
+/* ============ Pills ============ */
+#mfa-v5 .mfa-pill{
+  display:inline-block;border-radius:999px;font-weight:500;white-space:nowrap;
+  padding:12px 26px;font-size:14px;letter-spacing:.005em;
+  transition:transform var(--mfa-h) ease,box-shadow var(--mfa-h) ease,background-color var(--mfa-h) ease,border-color var(--mfa-h) ease;
+}
+#mfa-v5 .mfa-pill-ink{background:var(--mfa-ink);color:#FFFFFF;}
+#mfa-v5 .mfa-pill-ink:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(13,13,13,.05);}
+#mfa-v5 .mfa-pill-ghost{border:1px solid var(--mfa-line-2);color:var(--mfa-ink);}
+#mfa-v5 .mfa-pill-ghost:hover{background:var(--mfa-surface);border-color:rgba(13,13,13,.28);}
+#mfa-v5 .mfa-pill-sm{padding:8px 17px;font-size:13px;}
+
+/* ============ Shared structures ============ */
+#mfa-v5 .mfa-sec{padding:124px 24px;}
+#mfa-v5 .mfa-col{max-width:880px;margin:0 auto;}
+#mfa-v5 .mfa-eyebrow{
+  font-family:var(--mfa-mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--mfa-muted);
+}
+#mfa-v5 h2{font-size:clamp(28px,4vw,36px);font-weight:500;letter-spacing:-.02em;line-height:1.18;}
+#mfa-v5 .mfa-label{border-left:1px solid var(--mfa-line-2);padding-left:20px;margin-bottom:56px;}
+#mfa-v5 .mfa-label-tag{
+  font-family:var(--mfa-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--mfa-ink);margin-bottom:8px;
+}
+#mfa-v5 .mfa-label-note{
+  font-family:var(--mfa-serif);font-style:italic;font-size:14px;line-height:1.5;color:var(--mfa-muted);
+}
+
+/* ============ Hero ============ */
+#mfa-v5 .mfa-hero{padding:120px 24px 110px;text-align:center;}
+#mfa-v5 .mfa-hero-in{max-width:820px;margin:0 auto;}
+#mfa-v5 .mfa-h1{
+  font-size:clamp(42px,7.2vw,70px);font-weight:500;letter-spacing:-.03em;line-height:1.07;
+  margin-top:30px;
+}
+#mfa-v5 .mfa-u{
+  text-decoration:underline;text-decoration-color:var(--mfa-accent);
+  text-decoration-thickness:2px;text-underline-offset:.14em;
+}
+#mfa-v5 .mfa-hero-p{max-width:52ch;margin:30px auto 0;font-size:17px;color:var(--mfa-muted);}
+#mfa-v5 .mfa-hero-ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:40px;}
+#mfa-v5 .mfa-hero-langs{
+  margin-top:32px;font-family:var(--mfa-mono);font-size:13px;letter-spacing:.04em;color:var(--mfa-muted);
+}
+
+/* ============ Exhibit 01 — Showcase + timeline ============ */
+#mfa-v5 .mfa-night{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:start;margin-top:48px;}
+#mfa-v5 .mfa-case{border:1px solid var(--mfa-line-2);padding:28px;background:var(--mfa-bg);}
+#mfa-v5 .mfa-case-frame{border:1px solid rgba(13,13,13,.06);background:var(--mfa-bg);}
+#mfa-v5 .mfa-chat-head{
+  display:flex;align-items:center;gap:10px;padding:16px 20px;border-bottom:1px solid var(--mfa-line);
+}
+#mfa-v5 .mfa-dot{width:7px;height:7px;border-radius:50%;background:rgba(13,13,13,.4);flex:0 0 auto;}
+#mfa-v5 .mfa-chat-title{font-size:13.5px;font-weight:500;letter-spacing:-.005em;}
+#mfa-v5 .mfa-chat-body{display:flex;flex-direction:column;gap:12px;padding:22px 20px;}
+#mfa-v5 .mfa-bub{
+  max-width:82%;padding:11px 14px;font-size:14px;line-height:1.55;
+}
+#mfa-v5 .mfa-bub-pt{align-self:flex-start;background:var(--mfa-surface);border-radius:14px 14px 14px 4px;}
+#mfa-v5 .mfa-bub-as{align-self:flex-end;background:#FFFFFF;border:1px solid var(--mfa-line);border-radius:14px 14px 4px 14px;}
+#mfa-v5 .mfa-bub-l{
+  display:block;margin-top:6px;text-align:right;
+  font-family:var(--mfa-mono);font-size:9px;letter-spacing:.18em;color:var(--mfa-muted);
+}
+#mfa-v5 .mfa-case-cap{
+  margin-top:16px;font-family:var(--mfa-mono);font-size:11px;letter-spacing:.02em;color:var(--mfa-muted);
+}
+#mfa-v5 .mfa-timeline{margin-top:2px;}
+#mfa-v5 .mfa-tl-row{
+  display:grid;grid-template-columns:60px 1fr;gap:18px;padding:18px 0;
+  border-bottom:1px dotted rgba(13,13,13,.22);
+}
+#mfa-v5 .mfa-tl-row:first-child{padding-top:6px;}
+#mfa-v5 .mfa-tl-row:last-child{border-bottom:0;}
+#mfa-v5 .mfa-tl-t{font-family:var(--mfa-mono);font-size:13px;color:var(--mfa-muted);padding-top:3px;}
+#mfa-v5 .mfa-tl-p{font-size:15px;line-height:1.6;color:var(--mfa-ink);}
+
+/* ============ Exhibit 02 — Vertical rows ============ */
+#mfa-v5 .mfa-rows{border-bottom:1px solid var(--mfa-line-2);}
+#mfa-v5 .mfa-row{
+  display:grid;grid-template-columns:72px 250px 1fr;gap:28px;align-items:baseline;
+  padding:32px 14px;border-top:1px solid var(--mfa-line-2);
+  transition:background var(--mfa-h) ease;
+}
+#mfa-v5 .mfa-row:hover{background:var(--mfa-surface);}
+#mfa-v5 .mfa-row-ix{font-family:var(--mfa-mono);font-size:13px;color:var(--mfa-muted);}
+#mfa-v5 .mfa-row-t{font-size:24px;font-weight:500;letter-spacing:-.015em;line-height:1.25;}
+#mfa-v5 .mfa-row-d{font-size:15.5px;line-height:1.6;color:var(--mfa-muted);}
+
+/* ============ Exhibit 03 — Catalogue columns ============ */
+#mfa-v5 .mfa-ctl-intro{max-width:58ch;margin-top:22px;color:var(--mfa-muted);}
+#mfa-v5 .mfa-cat{display:grid;grid-template-columns:1fr 1fr;margin-top:56px;}
+#mfa-v5 .mfa-cat-col:first-child{padding-right:56px;}
+#mfa-v5 .mfa-cat-col:last-child{border-left:1px solid var(--mfa-line-2);padding-left:56px;}
+#mfa-v5 .mfa-cat-h{
+  font-family:var(--mfa-mono);font-size:12px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--mfa-ink);margin-bottom:10px;
+}
+#mfa-v5 .mfa-cat-li{display:flex;gap:13px;align-items:flex-start;padding:14px 0;font-size:15px;line-height:1.55;}
+#mfa-v5 .mfa-cat ul li + li{border-top:1px solid var(--mfa-line);}
+#mfa-v5 .mfa-ic{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:16px;height:16px;flex:0 0 16px;margin-top:4px;
+  color:var(--mfa-ink);opacity:.7;
+}
+#mfa-v5 .mfa-ic-min{opacity:.4;}
+#mfa-v5 .mfa-ic svg{width:15px;height:15px;}
+
+/* ============ Exhibit 04 — Numbers ============ */
+#mfa-v5 .mfa-stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:16px;}
+#mfa-v5 .mfa-stat{text-align:center;padding:10px 20px;}
+#mfa-v5 .mfa-stat + .mfa-stat{border-left:1px solid var(--mfa-line-2);}
+#mfa-v5 .mfa-stat-n{
+  font-size:clamp(46px,6vw,64px);font-weight:500;letter-spacing:-.02em;line-height:1;
+  font-variant-numeric:tabular-nums;
+}
+#mfa-v5 .mfa-stat-l{margin-top:14px;font-size:14.5px;color:var(--mfa-muted);}
+#mfa-v5 .mfa-stats-meta{
+  margin-top:64px;text-align:center;font-family:var(--mfa-mono);font-size:12px;
+  letter-spacing:.1em;color:var(--mfa-muted);line-height:2.1;
+}
+
+/* ============ Closing CTA ============ */
+#mfa-v5 .mfa-cta{padding:124px 24px;text-align:center;}
+#mfa-v5 .mfa-cta-in{max-width:720px;margin:0 auto;}
+#mfa-v5 .mfa-cta h2{margin-top:28px;}
+#mfa-v5 .mfa-cta-p{margin:24px auto 0;max-width:46ch;color:var(--mfa-muted);}
+#mfa-v5 .mfa-cta-note{margin-top:22px;font-size:13px;color:var(--mfa-muted);}
+
+/* ============ Legal + footer ============ */
+#mfa-v5 .mfa-legal{
+  max-width:680px;margin:0 auto;padding:0 24px 72px;text-align:center;
+  font-size:12px;line-height:1.75;color:var(--mfa-muted);
+}
+#mfa-v5 .mfa-footer{
+  border-top:1px solid var(--mfa-line-2);background:var(--mfa-bg);
+  padding:76px 24px 64px;text-align:center;
+}
+#mfa-v5 .mfa-foot-seal{margin:0 auto 26px;}
+#mfa-v5 .mfa-foot-p1{font-size:15px;}
+#mfa-v5 .mfa-foot-p2{margin-top:5px;font-size:14px;color:var(--mfa-muted);}
+#mfa-v5 .mfa-foot-links{
+  margin-top:34px;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 14px;
+  font-size:14px;
+}
+#mfa-v5 .mfa-foot-links a{transition:color var(--mfa-h) ease;}
+#mfa-v5 .mfa-foot-links a:hover{color:var(--mfa-muted);}
+#mfa-v5 .mfa-sep{color:var(--mfa-muted);}
+#mfa-v5 .mfa-foot-c{margin-top:46px;font-size:13px;color:var(--mfa-muted);}
+
+/* ============ Reveal motion ============ */
+#mfa-v5.mfa-js .mfa-rv{
+  opacity:0;transform:translateY(14px);
+  transition:opacity var(--mfa-t) var(--mfa-ease),transform var(--mfa-t) var(--mfa-ease);
+}
+#mfa-v5.mfa-js .mfa-rv.mfa-in{opacity:1;transform:translateY(0);}
+#mfa-v5.mfa-js .mfa-bub{
+  opacity:0;transform:scale(.98);
+  transition:opacity 600ms var(--mfa-ease),transform 600ms var(--mfa-ease);
+}
+#mfa-v5.mfa-js .mfa-bub.mfa-in{opacity:1;transform:scale(1);}
+
+/* ============ Responsive ============ */
+@media (max-width:940px){
+  #mfa-v5 .mfa-nav-links{display:none;}
+  #mfa-v5 .mfa-night{grid-template-columns:1fr;gap:52px;}
+  #mfa-v5 .mfa-row{grid-template-columns:56px 1fr;gap:8px 20px;}
+  #mfa-v5 .mfa-row-d{grid-column:2;}
+}
+@media (max-width:760px){
+  #mfa-v5 .mfa-lang{display:none;}
+  #mfa-v5 .mfa-sec{padding:72px 20px;}
+  #mfa-v5 .mfa-hero{padding:96px 20px 72px;}
+  #mfa-v5 .mfa-cta{padding:72px 20px;}
+  #mfa-v5 .mfa-label{margin-bottom:44px;}
+  #mfa-v5 .mfa-cat{grid-template-columns:1fr;}
+  #mfa-v5 .mfa-cat-col:first-child{padding-right:0;}
+  #mfa-v5 .mfa-cat-col:last-child{border-left:0;padding-left:0;border-top:1px solid var(--mfa-line-2);margin-top:44px;padding-top:44px;}
+  #mfa-v5 .mfa-stats{grid-template-columns:1fr;}
+  #mfa-v5 .mfa-stat + .mfa-stat{border-left:0;border-top:1px solid var(--mfa-line-2);margin-top:26px;padding-top:30px;}
+  #mfa-v5 .mfa-stats-meta{letter-spacing:.06em;}
+}
+@media (max-width:480px){
+  #mfa-v5 .mfa-case{padding:20px;}
+  #mfa-v5 .mfa-hero-ctas .mfa-pill{width:100%;max-width:320px;}
+}
+
+/* ============ Reduced motion ============ */
+@media (prefers-reduced-motion:reduce){
+  #mfa-v5 *,#mfa-v5 *::before,#mfa-v5 *::after{transition:none !important;animation:none !important;}
+  #mfa-v5.mfa-js .mfa-rv,#mfa-v5.mfa-js .mfa-bub{opacity:1 !important;transform:none !important;}
+}
+
+/* ============ Mobile menu (multi-page prototype) ============ */
+#mfa-v5 .mfa-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;padding:8px;}
+#mfa-v5 .mfa-burger span{display:block;height:1.5px;background:#0D0D0D;}
+#mfa-v5 .mfa-nav-links.open{display:flex;position:absolute;top:64px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:#FFFFFF;border-bottom:1px solid rgba(13,13,13,.16);padding:10px 24px 18px;}
+#mfa-v5 .mfa-nav-links.open a{width:100%;padding:12px 0;border-bottom:1px solid rgba(13,13,13,.10);font-size:15px;color:#0D0D0D;}
+#mfa-v5 .mfa-nav-links.open a:last-child{border-bottom:0;}
+@media (max-width:940px){
+  #mfa-v5 .mfa-burger{display:flex;}
+  #mfa-v5 .mfa-nav-right{margin-left:auto;}
+}
+
+/* ============ Market exhibit — 2x2 grid ============ */
+#mfa-v5 .mfa-stats--pazar{grid-template-columns:repeat(2,1fr);max-width:720px;margin:16px auto 0;}
+#mfa-v5 .mfa-stats--pazar .mfa-stat:nth-child(3){border-left:0;}
+@media (max-width:760px){
+  #mfa-v5 .mfa-stats--pazar{grid-template-columns:1fr;max-width:none;}
+  #mfa-v5 .mfa-stats--pazar .mfa-stat:nth-child(3){border-top:1px solid var(--mfa-line-2);margin-top:26px;padding-top:30px;}
+}
+</style>
+</head>
+<body>
+
+<nav class="mfa-nav" aria-label="Main menu">
+  <div class="mfa-nav-in">
+    <a class="mfa-brand" href="index.html" aria-label="Mafe Studio home page">
+      <svg class="mfa-seal" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.5" pathLength="100" stroke-dasharray="84 7 16"/>
+        <path d="M8.4 14.8V9.2L12 12.4L15.6 9.2V14.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="19.78" cy="4.22" r="1.7" fill="#E5553B"/>
+      </svg>
+      Mafe Studio
+    </a>
+    <div class="mfa-nav-links" id="mfa-menu">
+      <a href="index.html">Studio</a>
+      <a href="health.html" aria-current="page">Health</a>
+      <a href="research.html">Finance</a>
+      <a href="coach.html">Coaching</a>
+      <a href="garson.html">Food</a>
+      <a href="pitch.html">Training</a>
+    </div>
+    <div class="mfa-nav-right">
+      <span class="mfa-lang"><b>EN</b> / <a href="../health.html">TR</a></span>
+      <a class="mfa-pill mfa-pill-ink mfa-pill-sm" href="contact.html">Book a call</a>
+    </div>
+    <button class="mfa-burger" type="button" aria-expanded="false" aria-controls="mfa-menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<main id="mfa-v5">
+
+<header class="mfa-hero">
+  <div class="mfa-hero-in" data-mfa-stagger>
+    <p class="mfa-eyebrow mfa-rv">MAFE HEALTH — ISTANBUL</p>
+    <h1 class="mfa-h1 mfa-rv">Be the clinic that replies <span class="mfa-u">first</span>.</h1>
+    <p class="mfa-hero-p mfa-rv">The same patient writes to five clinics. The first reply usually wins. Mafe Health answers on WhatsApp, in six languages, 24/7 — and hands the conversation to your team, ready.</p>
+    <div class="mfa-hero-ctas mfa-rv">
+      <a class="mfa-pill mfa-pill-ink" href="contact.html">Book a call</a>
+      <a class="mfa-pill mfa-pill-ghost" href="#mfa-v5-exhibit-01">See how it works</a>
+    </div>
+    <p class="mfa-hero-langs mfa-rv">Türkçe · English · Deutsch · العربية · Русский · Español</p>
+  </div>
+</header>
+
+<section class="mfa-sec" id="mfa-v5-exhibit-01" aria-label="Exhibit 01 — One night" style="scroll-margin-top:88px;">
+  <div class="mfa-col">
+    <div class="mfa-label mfa-rv">
+      <p class="mfa-label-tag">EXHIBIT 01 — ONE NIGHT</p>
+      <p class="mfa-label-note">Five clinics written to, in five minutes.</p>
+    </div>
+    <h2 class="mfa-rv">One message, 03:12 a.m.</h2>
+    <div class="mfa-night">
+      <figure class="mfa-case mfa-rv">
+        <div class="mfa-case-frame">
+          <div class="mfa-chat-head">
+            <span class="mfa-dot" aria-hidden="true"></span>
+            <span class="mfa-chat-title">Öz Clinic · Assistant</span>
+          </div>
+          <div class="mfa-chat-body">
+            <div class="mfa-bub mfa-bub-pt">
+              Hallo, DHI oder FUE?
+              <span class="mfa-bub-l">DE</span>
+            </div>
+            <div class="mfa-bub mfa-bub-as">
+              Hello, I'm Öz Clinic's digital assistant.
+              <span class="mfa-bub-l">DE</span>
+            </div>
+            <div class="mfa-bub mfa-bub-as">
+              Both techniques are done at our clinic; I can walk you through the package.
+              <span class="mfa-bub-l">DE</span>
+            </div>
+            <div class="mfa-bub mfa-bub-pt">
+              How many grafts will I need?
+              <span class="mfa-bub-l">DE</span>
+            </div>
+            <div class="mfa-bub mfa-bub-as">
+              Our doctor assesses graft count in a video consultation. Would tomorrow at 10:00 work?
+              <span class="mfa-bub-l">DE</span>
+            </div>
+          </div>
+        </div>
+        <figcaption class="mfa-case-cap">An illustrative flow, not a real patient conversation.</figcaption>
+      </figure>
+      <ol class="mfa-timeline" data-mfa-stagger>
+        <li class="mfa-tl-row mfa-rv">
+          <span class="mfa-tl-t">03:12</span>
+          <p class="mfa-tl-p">A message from Hamburg, in German: DHI or FUE? The assistant introduces itself and carries on in German.</p>
+        </li>
+        <li class="mfa-tl-row mfa-rv">
+          <span class="mfa-tl-t">03:14</span>
+          <p class="mfa-tl-p">Techniques, stay, what's included. Only from what your clinic approved.</p>
+        </li>
+        <li class="mfa-tl-row mfa-rv">
+          <span class="mfa-tl-t">03:17</span>
+          <p class="mfa-tl-p">"How many grafts?" No number — that's the surgeon's call. It offers a video slot instead.</p>
+        </li>
+        <li class="mfa-tl-row mfa-rv">
+          <span class="mfa-tl-t">03:21</span>
+          <p class="mfa-tl-p">The patient mentions a transplant elsewhere two years ago. Revision case: the assistant stops and hands over.</p>
+        </li>
+        <li class="mfa-tl-row mfa-rv">
+          <span class="mfa-tl-t">09:00</span>
+          <p class="mfa-tl-p">Your team starts the day with a summary waiting: country, procedure, how warm, why handed over.</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="mfa-sec" aria-label="Exhibit 02 — Verticals">
+  <div class="mfa-col">
+    <div class="mfa-label mfa-rv">
+      <p class="mfa-label-tag">EXHIBIT 02 — VERTICALS</p>
+      <p class="mfa-label-note">Three verticals, one assistant.</p>
+    </div>
+    <div class="mfa-rows" data-mfa-stagger>
+      <div class="mfa-row mfa-rv">
+        <span class="mfa-row-ix">01</span>
+        <h3 class="mfa-row-t">Hair transplant</h3>
+        <p class="mfa-row-d">FUE, DHI, Sapphire FUE; stay, package, visa. Graft counts stay with your surgeon.</p>
+      </div>
+      <div class="mfa-row mfa-rv">
+        <span class="mfa-row-ix">02</span>
+        <h3 class="mfa-row-t">Dental treatment</h3>
+        <p class="mfa-row-d">Implants, All-on-4, zirconia, smile design. Clinical questions go to your doctor.</p>
+      </div>
+      <div class="mfa-row mfa-rv">
+        <span class="mfa-row-ix">03</span>
+        <h3 class="mfa-row-t">Aesthetic surgery</h3>
+        <p class="mfa-row-d">Rhinoplasty, liposuction, package contents. Clinical questions go to your doctor.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mfa-sec" aria-label="Exhibit 03 — Control">
+  <div class="mfa-col">
+    <div class="mfa-label mfa-rv">
+      <p class="mfa-label-tag">EXHIBIT 03 — CONTROL</p>
+      <p class="mfa-label-note">The assistant knows; the doctor decides.</p>
+    </div>
+    <h2 class="mfa-rv">The last word belongs to your doctors.</h2>
+    <p class="mfa-ctl-intro mfa-rv">Your clinic draws the lines. The moment a question turns clinical, the conversation moves to your team, with a summary.</p>
+    <div class="mfa-cat">
+      <div class="mfa-cat-col mfa-rv">
+        <h3 class="mfa-cat-h">Goes to your team</h3>
+        <ul>
+          <li class="mfa-cat-li"><span class="mfa-ic"><i data-lucide="check" aria-hidden="true"></i></span>Any clinical question: candidacy, risks, anaesthesia, medication</li>
+          <li class="mfa-cat-li"><span class="mfa-ic"><i data-lucide="check" aria-hidden="true"></i></span>Possible emergencies</li>
+          <li class="mfa-cat-li"><span class="mfa-ic"><i data-lucide="check" aria-hidden="true"></i></span>Anyone possibly under 18</li>
+          <li class="mfa-cat-li"><span class="mfa-ic"><i data-lucide="check" aria-hidden="true"></i></span>Pregnancy and breastfeeding</li>
+          <li class="mfa-cat-li"><span class="mfa-ic"><i data-lucide="check" aria-hidden="true"></i></span>Revision or repair cases</li>
+          <li class="mfa-cat-li"><span class="mfa-ic"><i data-lucide="check" aria-hidden="true"></i></span>Shared photos or medical history</li>
+          <li class="mfa-cat-li"><span class="mfa-ic"><i data-lucide="check" aria-hidden="true"></i></span>Anyone who asks for a person</li>
+          <li class="mfa-cat-li"><span class="mfa-ic"><i data-lucide="check" aria-hidden="true"></i></span>Anything it isn't sure about</li>
+        </ul>
+      </div>
+      <div class="mfa-cat-col mfa-rv">
+        <h3 class="mfa-cat-h">Reserved for your doctors</h3>
+        <ul>
+          <li class="mfa-cat-li"><span class="mfa-ic mfa-ic-min"><i data-lucide="minus" aria-hidden="true"></i></span>No diagnosis, no grading</li>
+          <li class="mfa-cat-li"><span class="mfa-ic mfa-ic-min"><i data-lucide="minus" aria-hidden="true"></i></span>No graft estimates</li>
+          <li class="mfa-cat-li"><span class="mfa-ic mfa-ic-min"><i data-lucide="minus" aria-hidden="true"></i></span>No "you're a candidate"</li>
+          <li class="mfa-cat-li"><span class="mfa-ic mfa-ic-min"><i data-lucide="minus" aria-hidden="true"></i></span>No promised results</li>
+          <li class="mfa-cat-li"><span class="mfa-ic mfa-ic-min"><i data-lucide="minus" aria-hidden="true"></i></span>No medication or dosage advice</li>
+          <li class="mfa-cat-li"><span class="mfa-ic mfa-ic-min"><i data-lucide="minus" aria-hidden="true"></i></span>Photos go to your surgeon, not to a model</li>
+          <li class="mfa-cat-li"><span class="mfa-ic mfa-ic-min"><i data-lucide="minus" aria-hidden="true"></i></span>No prices without authorisation on file</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mfa-sec" aria-label="Exhibit 04 — Watch">
+  <div class="mfa-col">
+    <div class="mfa-label mfa-rv">
+      <p class="mfa-label-tag">EXHIBIT 04 — WATCH</p>
+      <p class="mfa-label-note">The patient in the video is fictional; the product is real.</p>
+    </div>
+    <h2 class="mfa-rv">Watch the product through one conversation.</h2>
+    <figure class="mfa-ph mfa-rv" style="margin-top:48px;">
+      <div class="mfa-ph-frame">
+        <p class="mfa-ph-tag">PRODUCT TOUR</p>
+        <p class="mfa-ph-note">The product tour will be published here.</p>
+      </div>
+      <figcaption class="mfa-case-cap">16:10 — PRODUCT TOUR VIDEO</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="mfa-sec" aria-label="Exhibit 05 — Numbers">
+  <div class="mfa-col">
+    <div class="mfa-label mfa-rv">
+      <p class="mfa-label-tag">EXHIBIT 05 — NUMBERS</p>
+      <p class="mfa-label-note">No noise, few numbers.</p>
+    </div>
+    <div class="mfa-stats" data-mfa-stagger>
+      <div class="mfa-stat mfa-rv">
+        <p class="mfa-stat-n">6</p>
+        <p class="mfa-stat-l">languages, one assistant</p>
+      </div>
+      <div class="mfa-stat mfa-rv">
+        <p class="mfa-stat-n">24/7</p>
+        <p class="mfa-stat-l">replies</p>
+      </div>
+      <div class="mfa-stat mfa-rv">
+        <p class="mfa-stat-n">0</p>
+        <p class="mfa-stat-l">ads and tracking</p>
+      </div>
+    </div>
+    <p class="mfa-stats-meta mfa-rv">DATA STORED IN THE EU · EVERY REPLY LOGGED · AI DISCLOSURE IN THE FIRST MESSAGE · KVKK · GDPR</p>
+  </div>
+</section>
+
+<section class="mfa-sec" aria-label="Exhibit 06 — Market">
+  <div class="mfa-col">
+    <div class="mfa-label mfa-rv">
+      <p class="mfa-label-tag">EXHIBIT 06 — MARKET</p>
+      <p class="mfa-label-note">Your patients are already there.</p>
+    </div>
+    <h2 class="mfa-rv">The market is in Turkey; the patient is on WhatsApp.</h2>
+    <div class="mfa-stats mfa-stats--pazar" data-mfa-stagger>
+      <div class="mfa-stat mfa-rv">
+        <p class="mfa-stat-n">1.5M</p>
+        <p class="mfa-stat-l">patients came to Turkey for treatment in 2024</p>
+      </div>
+      <div class="mfa-stat mfa-rv">
+        <p class="mfa-stat-n">3</p>
+        <p class="mfa-stat-l">billion USD — annual health-tourism revenue, 2024</p>
+      </div>
+      <div class="mfa-stat mfa-rv">
+        <p class="mfa-stat-n">88.6%</p>
+        <p class="mfa-stat-l">WhatsApp usage in Turkey — TÜİK, 2025</p>
+      </div>
+      <div class="mfa-stat mfa-rv">
+        <p class="mfa-stat-n">20</p>
+        <p class="mfa-stat-l">billion USD — Turkey's 2028 target (USHAŞ)</p>
+      </div>
+    </div>
+    <p class="mfa-stats-meta mfa-rv">SOURCES: MINISTRY OF TRADE, 2024 · TÜİK, 2025 · USHAŞ 2028 TARGET — PUBLIC DATA</p>
+  </div>
+</section>
+
+<section class="mfa-cta" aria-label="Talk to us">
+  <div class="mfa-cta-in" data-mfa-stagger>
+    <p class="mfa-eyebrow mfa-rv">TALK TO US</p>
+    <h2 class="mfa-rv">See it work on your own clinic.</h2>
+    <p class="mfa-cta-p mfa-rv">A short call: the product, your questions.</p>
+    <div class="mfa-hero-ctas mfa-rv">
+      <a class="mfa-pill mfa-pill-ink" href="contact.html">Book a call</a>
+    </div>
+    <p class="mfa-cta-note mfa-rv">Free. No card required.</p>
+  </div>
+</section>
+
+<p class="mfa-legal">Mafe Health is an AI assistant. It does not diagnose or give medical advice. It tells every patient, in its first message, that they are talking to an automated assistant, and it hands any possible emergency to your team immediately.</p>
+
+</main>
+
+<footer class="mfa-footer">
+  <svg class="mfa-seal mfa-foot-seal" width="44" height="44" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.5" pathLength="100" stroke-dasharray="84 7 16"/>
+    <path d="M8.4 14.8V9.2L12 12.4L15.6 9.2V14.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="19.78" cy="4.22" r="1.7" fill="#E5553B"/>
+  </svg>
+  <p class="mfa-foot-p1">A small team in Istanbul, building AI products.</p>
+  <p class="mfa-foot-p2">Health. Research. Coaching.</p>
+  <div class="mfa-foot-links">
+    <a href="health.html">Mafe Health</a><span class="mfa-sep" aria-hidden="true">·</span>
+    <a href="research.html">Mafe Research</a><span class="mfa-sep" aria-hidden="true">·</span>
+    <a href="coach.html">Mafe Coach</a><span class="mfa-sep">·</span><a href="garson.html">Garson</a><span class="mfa-sep">·</span><a href="pitch.html">Mafe Pitch</a><span class="mfa-sep" aria-hidden="true">·</span>
+    <a href="contact.html">Contact</a><span class="mfa-sep" aria-hidden="true">·</span>
+    <a href="tayfa.html">Crew</a>
+  </div>
+  <p class="mfa-foot-c">© 2026 Mafe Studio. <span class="mfa-sep" aria-hidden="true">·</span> Designed and built in Istanbul.<span class="mfa-foot-coord" style="display:block;margin-top:8px;font-family:var(--mfa-mono);font-size:11px;letter-spacing:.12em;">41°02′N · 028°58′E</span></p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js" defer></script>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

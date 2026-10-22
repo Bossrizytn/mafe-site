@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tayfa · Mafe Studio</title>
+<meta name="description" content="Mafe Studio'yu yapanlar: nasıl çalışıyoruz, bayrağımız, künye.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Instrument+Serif:ital@1&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* ============================================================
+   tayfa.html — sayfaya özel kurallar
+   Manifesto tipografisi, künye satırları (220px 1fr), sancak vitrini
+   ============================================================ */
+.mfa-sec + .mfa-sec{border-top:1px solid var(--mfa-line);}
+
+/* ---- Bölüm 01: manifesto paragrafları ---- */
+.mfa-man{margin-top:44px;}
+.mfa-man p{font-size:17px;line-height:1.75;max-width:62ch;}
+.mfa-man p + p{margin-top:28px;}
+.mfa-man .mfa-man-sign{
+  margin-top:36px;
+  font-family:var(--mfa-mono);font-size:12px;line-height:1.6;
+  letter-spacing:.14em;color:var(--mfa-muted);
+}
+
+/* ---- Bölüm 02: bayrak ---- */
+.mfa-flag-p{margin-top:40px;font-size:17px;line-height:1.75;max-width:62ch;}
+.mfa-flag-case{margin-top:48px;}
+.mfa-flag-frame{display:flex;align-items:center;justify-content:center;padding:44px 24px;}
+.mfa-flag-svg{width:min(360px,82%);height:auto;color:var(--mfa-ink);}
+
+/* ---- Bölüm 03: ekip ---- */
+.mfa-crew{margin-top:44px;}
+.mfa-crew p{font-size:17px;line-height:1.75;max-width:62ch;}
+.mfa-crew .mfa-pill{margin-top:36px;}
+
+/* ---- Bölüm 04: künye satırları (etiket + metin) ---- */
+.mfa-kun{margin-top:44px;}
+.mfa-row--kv{grid-template-columns:220px 1fr;gap:28px;}
+.mfa-row-k{
+  font-family:var(--mfa-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--mfa-ink);
+}
+.mfa-row-v{font-size:15.5px;line-height:1.65;color:var(--mfa-muted);}
+.mfa-row-v a{
+  color:var(--mfa-ink);border-bottom:1px solid var(--mfa-line-2);padding-bottom:2px;
+  transition:border-color var(--mfa-h) ease;
+}
+.mfa-row-v a:hover,.mfa-row-v a:focus-visible{border-color:var(--mfa-ink);}
+
+@media (max-width:760px){
+  .mfa-row--kv{grid-template-columns:1fr;gap:10px;padding:26px 6px;}
+  .mfa-man p,.mfa-flag-p,.mfa-crew p{font-size:16.5px;}
+}
+</style>
+</head>
+<body>
+
+<nav class="mfa-nav" aria-label="Üst menü">
+  <div class="mfa-nav-in">
+    <a class="mfa-brand" href="index.html" aria-label="Mafe Studio ana sayfa">
+      <svg class="mfa-seal" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.5" pathLength="100" stroke-dasharray="84 7 16"/><path d="M8.4 14.8V9.2L12 12.4L15.6 9.2V14.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="19.78" cy="4.22" r="1.7" fill="#E5553B"/></svg>
+      Mafe Studio
+    </a>
+    <div class="mfa-nav-links" id="mfa-menu">
+      <a href="index.html">Studio</a>
+      <a href="health.html">Sağlık</a>
+      <a href="research.html">Finans</a>
+      <a href="coach.html">Koçluk</a>
+      <a href="garson.html">Yemek</a>
+      <a href="pitch.html">Antrenman</a>
+    </div>
+    <div class="mfa-nav-right">
+      <span class="mfa-lang"><b>TR</b> / <a href="en/tayfa.html">EN</a></span>
+      <a class="mfa-pill mfa-pill-ink mfa-pill-sm" href="contact.html">İletişim</a>
+    </div>
+    <button class="mfa-burger" type="button" aria-expanded="false" aria-controls="mfa-menu" aria-label="Menüyü aç"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="mfa-hero">
+  <div class="mfa-hero-in mfa-rv">
+    <p class="mfa-eyebrow">TAYFA — İSTANBUL</p>
+    <h1 class="mfa-h1">Mafe Studio'yu <span class="mfa-i mfa-u">yapanlar.</span></h1>
+    <p class="mfa-hero-p">Küçük bir ekibiz ve İstanbul'dayız. Bu sayfada kim olduğumuzu ve nasıl çalıştığımızı anlatıyoruz.</p>
+  </div>
+</header>
+
+<section class="mfa-sec">
+  <div class="mfa-col">
+    <div class="mfa-label mfa-rv">
+      <p class="mfa-label-tag">BÖLÜM 01 — NASIL ÇALIŞIYORUZ</p>
+      <p class="mfa-label-note">Az sayıda ürün, baştan sona kendimiz.</p>
+    </div>
+    <h2>Nasıl çalışıyoruz</h2>
+    <div class="mfa-man mfa-rv">
+      <p>Az sayıda ürün yapıyoruz ve her birini baştan sona kendimiz geliştiriyoruz: tasarımı, yazılımı ve yapay zekâ tarafını.</p>
+      <p>Bütçemizin büyük kısmı reklama değil ürüne gidiyor. Bir ürün gerçekten işe yaramadan onu büyütmeye çalışmıyoruz.</p>
+      <p>Ürünlerimizi kullanacak insanlarla doğrudan konuşuyoruz: klinik koordinatörleriyle, yatırımcılarla, spor yapanlarla.</p>
+      <p>Sağlık ve para gibi konularda yapay zekânın nerede duracağını baştan belirliyoruz; son kararı her zaman bir insan veriyor.</p>
+      <p>Kimsenin açmayacağı bir ayar ekranına da ana sayfaya gösterdiğimiz özeni gösteriyoruz.</p>
+      <p>Bir fikriniz varsa ya da bizimle çalışmak istiyorsanız, yazın.</p>
+      <p class="mfa-man-sign">Mafe Studio · İstanbul</p>
+    </div>
+  </div>
+</section>
+
+<section class="mfa-sec">
+  <div class="mfa-col">
+    <div class="mfa-label mfa-rv">
+      <p class="mfa-label-tag">BÖLÜM 02 — BAYRAK</p>
+      <p class="mfa-label-note">Ürünlerde değil, yalnızca burada.</p>
+    </div>
+    <h2>Bayrak</h2>
+    <p class="mfa-flag-p mfa-rv">Bu bayrak ürünlerimizde ya da reklamlarımızda yer almıyor; yalnızca bu sayfada, ekibin sayfasında duruyor.</p>
+    <figure class="mfa-case mfa-flag-case mfa-rv">
+      <div class="mfa-case-frame mfa-flag-frame">
+        <svg class="mfa-flag-svg" viewBox="0 0 340 160" fill="none" aria-hidden="true">
+          <g stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M64 26 V134"/>
+            <circle cx="64" cy="23" r="2.2"/>
+            <path d="M64 38 L306 38 L260 80 L306 122 L64 122 Z"/>
+            <path d="M64 66 H244" opacity=".3"/>
+            <path d="M64 94 H244" opacity=".3"/>
+            <path d="M172 56 L176.8 75.2 L196 80 L176.8 84.8 L172 104 L167.2 84.8 L148 80 L167.2 75.2 Z"/>
+            <path d="M172 68 L174 78 L184 80 L174 82 L172 92 L170 82 L160 80 L170 78 Z" transform="rotate(45 172 80)"/>
+          </g>
+          <circle cx="172" cy="80" r="1.8" fill="currentColor"/>
+        </svg>
+      </div>
+      <figcaption class="mfa-case-cap">Mafe sancağı: kırlangıç kuyruklu bir flama, üzerinde oyulmuş bir rüzgâr gülü</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="mfa-sec">
+  <div class="mfa-col">
+    <div class="mfa-label mfa-rv">
+      <p class="mfa-label-tag">BÖLÜM 03 — EKİP</p>
+      <p class="mfa-label-note">Açık başvuru.</p>
+    </div>
+    <h2>Bizimle çalışmak ister misiniz?</h2>
+    <div class="mfa-crew mfa-rv">
+      <p>Açık bir ilanımız yok. Yine de bu sayfaya kadar geldiyseniz ve yapmak istediğiniz bir şey varsa, yazın.</p>
+      <a class="mfa-pill mfa-pill-ghost" href="contact.html">Bize yazın</a>
+    </div>
+  </div>
+</section>
+
+<section class="mfa-sec">
+  <div class="mfa-col">
+    <div class="mfa-label mfa-rv">
+      <p class="mfa-label-tag">BÖLÜM 04 — KÜNYE</p>
+      <p class="mfa-label-note">Bir tutam zinober.</p>
+    </div>
+    <h2>Künye</h2>
+    <div class="mfa-rows mfa-kun mfa-rv">
+      <div class="mfa-row mfa-row--kv">
+        <div class="mfa-row-k">Görsel dil</div>
+        <div class="mfa-row-v">16. yüzyıl Osmanlı deniz haritalarından, portolanlardan esinlenildi: mürekkep zemin, kemik beyazı yazı, bir tutam zinober.</div>
+      </div>
+      <div class="mfa-row mfa-row--kv">
+        <div class="mfa-row-k">Yazı tipleri</div>
+        <div class="mfa-row-v">Instrument Serif, Geist, JetBrains Mono. Hepsi kendi sunucumuzdan yüklenir.</div>
+      </div>
+      <div class="mfa-row mfa-row--kv">
+        <div class="mfa-row-k">Gizlilik</div>
+        <div class="mfa-row-v">Bu site dış bir yazı tipi servisine, reklam ağına ya da izleme aracına bağlanmaz.</div>
+      </div>
+      <div class="mfa-row mfa-row--kv">
+        <div class="mfa-row-k">Hareket</div>
+        <div class="mfa-row-v">Hareketler yalnızca CSS ile yapılır. Cihazınızda hareketi azaltmayı seçtiyseniz hepsi durur.</div>
+      </div>
+      <div class="mfa-row mfa-row--kv">
+        <div class="mfa-row-k">Yer</div>
+        <div class="mfa-row-v">İstanbul'da yapıldı.</div>
+      </div>
+      <div class="mfa-row mfa-row--kv">
+        <div class="mfa-row-k">Meraklısına</div>
+        <div class="mfa-row-v"><a href="#">/humans.txt</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="mfa-footer">
+  <svg class="mfa-seal mfa-foot-seal" width="44" height="44" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.5" pathLength="100" stroke-dasharray="84 7 16"/><path d="M8.4 14.8V9.2L12 12.4L15.6 9.2V14.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="19.78" cy="4.22" r="1.7" fill="#E5553B"/></svg>
+  <p class="mfa-foot-p1">İstanbul'da yapay zekâ ürünleri yapan küçük bir ekip.</p>
+  <p class="mfa-foot-p2">Sağlık, araştırma, koçluk.</p>
+  <nav class="mfa-foot-links" aria-label="Alt menü">
+    <a href="health.html">Mafe Health</a><span class="mfa-sep">·</span><a href="research.html">Mafe Research</a><span class="mfa-sep">·</span><a href="coach.html">Mafe Coach</a><span class="mfa-sep">·</span><a href="garson.html">Garson</a><span class="mfa-sep">·</span><a href="pitch.html">Mafe Pitch</a><span class="mfa-sep">·</span><a href="contact.html">İletişim</a><span class="mfa-sep">·</span><a href="tayfa.html">Tayfa</a>
+  </nav>
+  <p class="mfa-foot-c">© 2026 Mafe Studio. — İstanbul'da tasarlandı ve geliştirildi.<span class="mfa-foot-coord">41°02′N · 028°58′E</span></p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js" defer></script>
+<script src="assets/site.js" defer></script>
+</body>
+</html>

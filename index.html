@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mafe Studio — İstanbul'dan yapay zekâ ürünleri</title>
+<meta name="description" content="İstanbul'dan yapay zekâ ürünleri: klinik asistanı, kaynaklı hisse araştırması, mesajla çalışan koç, konuşarak sipariş alan garson.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Instrument+Serif:ital@1&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* ---- sayfaya özel kurallar ---- */
+
+/* Eser satırı: ix / başlık+durum / açıklama / git */
+.mfa-row{grid-template-columns:72px minmax(0,1.1fr) minmax(0,1.3fr) auto;}
+.mfa-row-d{min-width:0;}
+.mfa-row-h{display:flex;flex-direction:column;align-items:flex-start;gap:10px;}
+.mfa-rows{margin-top:48px;}
+
+/* Vitrin alt yazısı */
+.mfa-ph .mfa-case-cap{margin-top:16px;}
+
+/* İstatistik alt satırı: kaynak ürün, mono */
+.mfa-stat-c{
+  margin-top:9px;font-family:var(--mfa-mono);font-size:10.5px;
+  letter-spacing:.16em;color:var(--mfa-muted);
+}
+
+/* Kapanış CTA eylem satırı */
+.mfa-cta-act{margin-top:36px;}
+
+/* Dar ekranlarda satır düzeni */
+@media (max-width:940px){
+  .mfa-row{grid-template-columns:56px minmax(0,1fr) auto;gap:10px 20px;align-items:start;}
+  .mfa-row-ix{grid-column:1;grid-row:1;}
+  .mfa-row-h{grid-column:2;grid-row:1;}
+  .mfa-row-d{grid-column:2 / -1;grid-row:2;}
+  .mfa-row-go{grid-column:3;grid-row:1;align-self:center;}
+}
+@media (max-width:480px){
+  .mfa-row-go{grid-column:2;grid-row:3;justify-self:start;align-self:start;}
+}
+</style>
+</head>
+<body>
+
+<nav class="mfa-nav" aria-label="Üst menü">
+  <div class="mfa-nav-in">
+    <a class="mfa-brand" href="index.html" aria-label="Mafe Studio ana sayfa">
+      <svg class="mfa-seal" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.5" pathLength="100" stroke-dasharray="84 7 16"/><path d="M8.4 14.8V9.2L12 12.4L15.6 9.2V14.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="19.78" cy="4.22" r="1.7" fill="#E5553B"/></svg>
+      Mafe Studio
+    </a>
+    <div class="mfa-nav-links" id="mfa-menu">
+      <a href="index.html" aria-current="page">Studio</a>
+      <a href="health.html">Sağlık</a>
+      <a href="research.html">Finans</a>
+      <a href="coach.html">Koçluk</a>
+      <a href="garson.html">Yemek</a>
+      <a href="pitch.html">Antrenman</a>
+    </div>
+    <div class="mfa-nav-right">
+      <span class="mfa-lang"><b>TR</b> / <a href="en/index.html">EN</a></span>
+      <a class="mfa-pill mfa-pill-ink mfa-pill-sm" href="contact.html">İletişim</a>
+    </div>
+    <button class="mfa-burger" type="button" aria-expanded="false" aria-controls="mfa-menu" aria-label="Menüyü aç"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ============ Hero ============ -->
+  <header class="mfa-hero">
+    <div class="mfa-hero-in">
+      <p class="mfa-eyebrow mfa-rv">MAFE STUDIO · İSTANBUL</p>
+      <h1 class="mfa-h1 mfa-rv">Her ürün <span class="mfa-i">tek bir iş</span> yapar.</h1>
+      <p class="mfa-hero-p mfa-rv">Mafe, İstanbul'da kurulan küçük bir yapay zekâ stüdyosu. Her ürün tek bir iş için tasarlanır, baştan sona kendimiz geliştirilir.</p>
+      <div class="mfa-hero-ctas mfa-rv">
+        <a class="mfa-pill mfa-pill-ink" href="#urunler">Ürünleri görün</a>
+        <a class="mfa-pill mfa-pill-ghost" href="contact.html">Bize yazın</a>
+      </div>
+      <p class="mfa-hero-langs mfa-rv">41°02′N · 028°58′E</p>
+    </div>
+  </header>
+
+  <!-- ============ Ürünler ============ -->
+  <section class="mfa-sec" id="urunler">
+    <div class="mfa-col">
+      <div class="mfa-label mfa-rv">
+        <p class="mfa-label-tag">ÜRÜNLER</p>
+        <p class="mfa-label-note">Hepsi uçtan uca bizim işimiz.</p>
+      </div>
+      <h2 class="mfa-rv">Biri klinikte, biri borsada, biri sahada.</h2>
+      <div class="mfa-rows">
+        <article class="mfa-row mfa-rv">
+          <span class="mfa-row-ix">01</span>
+          <div class="mfa-row-h">
+            <h3 class="mfa-row-t">Mafe Health</h3>
+            <span class="mfa-tag">CANLI</span>
+          </div>
+          <p class="mfa-row-d">Kliniğe gece yazan yabancı hastaya, kendi dilinde, saniyeler içinde cevap verir.</p>
+          <a class="mfa-row-go" href="health.html">Nasıl çalıştığını görün <span class="mfa-ic"><i data-lucide="arrow-right" aria-hidden="true"></i></span></a>
+        </article>
+        <article class="mfa-row mfa-rv">
+          <span class="mfa-row-ix">02</span>
+          <div class="mfa-row-h">
+            <h3 class="mfa-row-t">Mafe Research</h3>
+            <span class="mfa-tag">KAPALI BETA</span>
+          </div>
+          <p class="mfa-row-d">Bir hisseyi birden çok yapay zekâ ajanı okur. Her iddianın kaynağı görünür.</p>
+          <a class="mfa-row-go" href="research.html">Bekleme listesine katılın <span class="mfa-ic"><i data-lucide="arrow-right" aria-hidden="true"></i></span></a>
+        </article>
+        <article class="mfa-row mfa-rv">
+          <span class="mfa-row-ix">03</span>
+          <div class="mfa-row-h">
+            <h3 class="mfa-row-t">Mafe Coach</h3>
+            <span class="mfa-tag">BEKLEME LİSTESİ AÇIK</span>
+          </div>
+          <p class="mfa-row-d">Koçunuza mesaj yazın. Planınız buna göre değişir.</p>
+          <a class="mfa-row-go" href="coach.html">Bekleme listesine katılın <span class="mfa-ic"><i data-lucide="arrow-right" aria-hidden="true"></i></span></a>
+        </article>
+        <article class="mfa-row mfa-rv">
+          <span class="mfa-row-ix">04</span>
+          <div class="mfa-row-h">
+            <h3 class="mfa-row-t">Garson</h3>
+            <span class="mfa-tag">HAZIRLANIYOR</span>
+          </div>
+          <p class="mfa-row-d">Restoranlara WhatsApp'tan konuşarak sipariş aldırır; ofisler için öğle yemeği cüzdanı geliyor.</p>
+          <a class="mfa-row-go" href="garson.html">Gelişmeleri görün <span class="mfa-ic"><i data-lucide="arrow-right" aria-hidden="true"></i></span></a>
+        </article>
+        <article class="mfa-row mfa-rv">
+          <span class="mfa-row-ix">05</span>
+          <div class="mfa-row-h">
+            <h3 class="mfa-row-t">Mafe Pitch</h3>
+            <span class="mfa-tag">GELİŞTİRİLİYOR</span>
+          </div>
+          <p class="mfa-row-d">Futbol antrenörleri için antrenman planlayıcı: kısıtlardan plan üretir, drilları sahada animasyonla oynatır.</p>
+          <a class="mfa-row-go" href="pitch.html">Gelişmeleri görün <span class="mfa-ic"><i data-lucide="arrow-right" aria-hidden="true"></i></span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Vitrin: ekran görüntüleri ============ -->
+  <section class="mfa-sec" aria-label="Vitrin — ürün ekranları">
+    <div class="mfa-col">
+      <div class="mfa-label mfa-rv">
+        <p class="mfa-label-tag">VİTRİN — ÜRÜN EKRANLARI</p>
+        <p class="mfa-label-note">Ürün arayüzlerinden seçmeler.</p>
+      </div>
+      <figure class="mfa-ph mfa-rv">
+        <div class="mfa-ph-frame">
+          <p class="mfa-ph-tag">EKRAN GÖRÜNTÜLERİ</p>
+          <p class="mfa-ph-note">Mafe Health, Mafe Research ve Mafe Coach arayüzlerinden kareler buraya gelecek.</p>
+        </div>
+        <figcaption class="mfa-case-cap">16:10 — ÜRÜN EKRANLARI</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ Rakamlar ============ -->
+  <section class="mfa-sec" aria-label="Rakamlar">
+    <div class="mfa-col">
+      <div class="mfa-label mfa-rv">
+        <p class="mfa-label-tag">RAKAMLAR</p>
+        <p class="mfa-label-note">Gürültü yok, sayı az.</p>
+      </div>
+      <h2 class="mfa-rv">Ürünlerden birkaç rakam.</h2>
+      <div class="mfa-stats mfa-stats--quad mfa-rv">
+        <div class="mfa-stat">
+          <p class="mfa-stat-n">6</p>
+          <p class="mfa-stat-l">dilde yazışır</p>
+          <p class="mfa-stat-c">MAFE HEALTH</p>
+        </div>
+        <div class="mfa-stat">
+          <p class="mfa-stat-n">7/24</p>
+          <p class="mfa-stat-l">cevap verir</p>
+          <p class="mfa-stat-c">MAFE HEALTH</p>
+        </div>
+        <div class="mfa-stat">
+          <p class="mfa-stat-n">1</p>
+          <p class="mfa-stat-l">ekip, tüm ürünlerde</p>
+          <p class="mfa-stat-c">MAFE STUDIO</p>
+        </div>
+        <div class="mfa-stat">
+          <p class="mfa-stat-n">0</p>
+          <p class="mfa-stat-l">reklam ve izleme</p>
+          <p class="mfa-stat-c">MAFE STUDIO</p>
+        </div>
+      </div>
+      <p class="mfa-stats-meta mfa-rv">MAFE HEALTH: WHATSAPP, 6 DİL · MAFE RESEARCH: ÇOK AJANLI, KAYNAKLI · MAFE COACH: MESAJLA ÇALIŞAN · GARSON: WHATSAPP'TAN SİPARİŞ</p>
+    </div>
+  </section>
+
+  <!-- ============ Pazarlar ============ -->
+  <section class="mfa-sec" aria-label="Pazarlar">
+    <div class="mfa-col">
+      <div class="mfa-label mfa-rv">
+        <p class="mfa-label-tag">PAZARLAR</p>
+        <p class="mfa-label-note">Her ürün, ölçülebilir bir pazarın içinde.</p>
+      </div>
+      <h2 class="mfa-rv">Ürünlerin arkasındaki pazarlar.</h2>
+      <div class="mfa-stats mfa-stats--quad mfa-rv">
+        <div class="mfa-stat">
+          <p class="mfa-stat-n">3</p>
+          <p class="mfa-stat-l">milyar $ — Türkiye sağlık turizmi geliri, 2024</p>
+          <p class="mfa-stat-c">MAFE HEALTH</p>
+        </div>
+        <div class="mfa-stat">
+          <p class="mfa-stat-n">6,7 M</p>
+          <p class="mfa-stat-l">bakiyeli bireysel hisse yatırımcısı, 2026</p>
+          <p class="mfa-stat-c">MAFE RESEARCH</p>
+        </div>
+        <div class="mfa-stat">
+          <p class="mfa-stat-n">20,3 M</p>
+          <p class="mfa-stat-l">Türkiye'de aktif spor yapan kişi</p>
+          <p class="mfa-stat-c">MAFE COACH</p>
+        </div>
+        <div class="mfa-stat">
+          <p class="mfa-stat-n">389</p>
+          <p class="mfa-stat-l">milyar ₺ — Türkiye hızlı ticaret hacmi, 2025</p>
+          <p class="mfa-stat-c">GARSON</p>
+        </div>
+      </div>
+      <p class="mfa-stats-meta mfa-rv">KAYNAKLAR: TİCARET BAKANLIĞI, 2024-25 · MKK/MATRİKS, 2026 · MACFIT HAREKET HARİTASI, 2024 — KAMUYA AÇIK PAZAR VERİLERİ</p>
+    </div>
+  </section>
+
+  <!-- ============ Kapanış CTA ============ -->
+  <section class="mfa-cta" aria-label="İletişim">
+    <div class="mfa-cta-in">
+      <p class="mfa-eyebrow mfa-rv">İLETİŞİM</p>
+      <h2 class="mfa-rv">Bize yazın.</h2>
+      <p class="mfa-cta-p mfa-rv">Kliniğiniz, ürünler ya da iş birliği. Bir iş günü içinde cevap veriyoruz.</p>
+      <div class="mfa-cta-act mfa-rv">
+        <a class="mfa-pill mfa-pill-ink" href="contact.html">Mesaj yazın</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="mfa-footer">
+  <svg class="mfa-seal mfa-foot-seal" width="44" height="44" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.5" pathLength="100" stroke-dasharray="84 7 16"/><path d="M8.4 14.8V9.2L12 12.4L15.6 9.2V14.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="19.78" cy="4.22" r="1.7" fill="#E5553B"/></svg>
+  <p class="mfa-foot-p1">İstanbul'da yapay zekâ ürünleri yapan küçük bir ekip.</p>
+  <p class="mfa-foot-p2">Sağlık, araştırma, koçluk.</p>
+  <nav class="mfa-foot-links" aria-label="Alt menü">
+    <a href="health.html">Mafe Health</a><span class="mfa-sep">·</span><a href="research.html">Mafe Research</a><span class="mfa-sep">·</span><a href="coach.html">Mafe Coach</a><span class="mfa-sep">·</span><a href="garson.html">Garson</a><span class="mfa-sep">·</span><a href="pitch.html">Mafe Pitch</a><span class="mfa-sep">·</span><a href="contact.html">İletişim</a><span class="mfa-sep">·</span><a href="tayfa.html">Tayfa</a>
+  </nav>
+  <p class="mfa-foot-c">© 2026 Mafe Studio. — İstanbul'da tasarlandı ve geliştirildi.<span class="mfa-foot-coord">41°02′N · 028°58′E</span></p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js" defer></script>
+<script src="assets/site.js" defer></script>
+</body>
+</html>

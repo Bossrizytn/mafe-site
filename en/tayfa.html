@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crew · Mafe Studio</title>
+<meta name="description" content="The team behind Mafe Studio, how we work, and the colophon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Instrument+Serif:ital@1&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+/* ============================================================
+   tayfa.html — page-specific rules
+   Manifesto typography, colophon rows (220px 1fr), flag showcase
+   ============================================================ */
+.mfa-sec + .mfa-sec{border-top:1px solid var(--mfa-line);}
+
+/* ---- Section 01: manifesto paragraphs ---- */
+.mfa-man{margin-top:44px;}
+.mfa-man p{font-size:17px;line-height:1.75;max-width:62ch;}
+.mfa-man p + p{margin-top:28px;}
+.mfa-man .mfa-man-sign{
+  margin-top:36px;
+  font-family:var(--mfa-mono);font-size:12px;line-height:1.6;
+  letter-spacing:.14em;color:var(--mfa-muted);
+}
+
+/* ---- Section 02: the flag ---- */
+.mfa-flag-p{margin-top:40px;font-size:17px;line-height:1.75;max-width:62ch;}
+.mfa-flag-case{margin-top:48px;}
+.mfa-flag-frame{display:flex;align-items:center;justify-content:center;padding:44px 24px;}
+.mfa-flag-svg{width:min(360px,82%);height:auto;color:var(--mfa-ink);}
+
+/* ---- Section 03: team ---- */
+.mfa-crew{margin-top:44px;}
+.mfa-crew p{font-size:17px;line-height:1.75;max-width:62ch;}
+.mfa-crew .mfa-pill{margin-top:36px;}
+
+/* ---- Section 04: colophon rows (label + text) ---- */
+.mfa-kun{margin-top:44px;}
+.mfa-row--kv{grid-template-columns:220px 1fr;gap:28px;}
+.mfa-row-k{
+  font-family:var(--mfa-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--mfa-ink);
+}
+.mfa-row-v{font-size:15.5px;line-height:1.65;color:var(--mfa-muted);}
+.mfa-row-v a{
+  color:var(--mfa-ink);border-bottom:1px solid var(--mfa-line-2);padding-bottom:2px;
+  transition:border-color var(--mfa-h) ease;
+}
+.mfa-row-v a:hover,.mfa-row-v a:focus-visible{border-color:var(--mfa-ink);}
+
+@media (max-width:760px){
+  .mfa-row--kv{grid-template-columns:1fr;gap:10px;padding:26px 6px;}
+  .mfa-man p,.mfa-flag-p,.mfa-crew p{font-size:16.5px;}
+}
+</style>
+</head>
+<body>
+
+<nav class="mfa-nav" aria-label="Main menu">
+  <div class="mfa-nav-in">
+    <a class="mfa-brand" href="index.html" aria-label="Mafe Studio home page">
+      <svg class="mfa-seal" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.5" pathLength="100" stroke-dasharray="84 7 16"/><path d="M8.4 14.8V9.2L12 12.4L15.6 9.2V14.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="19.78" cy="4.22" r="1.7" fill="#E5553B"/></svg>
+      Mafe Studio
+    </a>
+    <div class="mfa-nav-links" id="mfa-menu">
+      <a href="index.html">Studio</a>
+      <a href="health.html">Health</a>
+      <a href="research.html">Finance</a>
+      <a href="coach.html">Coaching</a>
+      <a href="garson.html">Food</a>
+      <a href="pitch.html">Training</a>
+    </div>
+    <div class="mfa-nav-right">
+      <span class="mfa-lang"><b>EN</b> / <a href="../tayfa.html">TR</a></span>
+      <a class="mfa-pill mfa-pill-ink mfa-pill-sm" href="contact.html">Contact</a>
+    </div>
+    <button class="mfa-burger" type="button" aria-expanded="false" aria-controls="mfa-menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="mfa-hero">
+  <div class="mfa-hero-in mfa-rv">
+    <p class="mfa-eyebrow">CREW — ISTANBUL</p>
+    <h1 class="mfa-h1">The people behind <span class="mfa-i mfa-u">Mafe Studio.</span></h1>
+    <p class="mfa-hero-p">We are a small team in Istanbul. This page is about who we are and how we work.</p>
+  </div>
+</header>
+
+<section class="mfa-sec">
+  <div class="mfa-col">
+    <div class="mfa-label mfa-rv">
+      <p class="mfa-label-tag">CHAPTER 01 — HOW WE WORK</p>
+      <p class="mfa-label-note">A few products, built end to end ourselves.</p>
+    </div>
+    <h2>How we work</h2>
+    <div class="mfa-man mfa-rv">
+      <p>We make a small number of products and build each one ourselves, end to end: the design, the software and the AI.</p>
+      <p>Most of our budget goes into the product, not advertising. We don't try to grow a product until it genuinely does the job.</p>
+      <p>We talk directly to the people who will use our products: clinic coordinators, investors, people who train.</p>
+      <p>In areas like health and money we decide up front where the AI stops; a person always makes the final call.</p>
+      <p>We give a settings screen nobody opens the same care we give the home page.</p>
+      <p>If you have an idea or want to work with us, write to us.</p>
+      <p class="mfa-man-sign">Mafe Studio · Istanbul</p>
+    </div>
+  </div>
+</section>
+
+<section class="mfa-sec">
+  <div class="mfa-col">
+    <div class="mfa-label mfa-rv">
+      <p class="mfa-label-tag">CHAPTER 02 — THE FLAG</p>
+      <p class="mfa-label-note">Not in the products; only here.</p>
+    </div>
+    <h2>The flag</h2>
+    <p class="mfa-flag-p mfa-rv">This flag isn't in our products or our ads. It only hangs here, on the team's page.</p>
+    <figure class="mfa-case mfa-flag-case mfa-rv">
+      <div class="mfa-case-frame mfa-flag-frame">
+        <svg class="mfa-flag-svg" viewBox="0 0 340 160" fill="none" aria-hidden="true">
+          <g stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M64 26 V134"/>
+            <circle cx="64" cy="23" r="2.2"/>
+            <path d="M64 38 L306 38 L260 80 L306 122 L64 122 Z"/>
+            <path d="M64 66 H244" opacity=".3"/>
+            <path d="M64 94 H244" opacity=".3"/>
+            <path d="M172 56 L176.8 75.2 L196 80 L176.8 84.8 L172 104 L167.2 84.8 L148 80 L167.2 75.2 Z"/>
+            <path d="M172 68 L174 78 L184 80 L174 82 L172 92 L170 82 L160 80 L170 78 Z" transform="rotate(45 172 80)"/>
+          </g>
+          <circle cx="172" cy="80" r="1.8" fill="currentColor"/>
+        </svg>
+      </div>
+      <figcaption class="mfa-case-cap">The Mafe flag: a swallow-tailed pennant with a compass rose cut out of it</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="mfa-sec">
+  <div class="mfa-col">
+    <div class="mfa-label mfa-rv">
+      <p class="mfa-label-tag">CHAPTER 03 — TEAM</p>
+      <p class="mfa-label-note">Open application.</p>
+    </div>
+    <h2>Want to work with us?</h2>
+    <div class="mfa-crew mfa-rv">
+      <p>We have no open roles. But if you found your way to this page and there's something you want to build, write to us.</p>
+      <a class="mfa-pill mfa-pill-ghost" href="contact.html">Write to us</a>
+    </div>
+  </div>
+</section>
+
+<section class="mfa-sec">
+  <div class="mfa-col">
+    <div class="mfa-label mfa-rv">
+      <p class="mfa-label-tag">CHAPTER 04 — COLOPHON</p>
+      <p class="mfa-label-note">A trace of vermilion.</p>
+    </div>
+    <h2>Colophon</h2>
+    <div class="mfa-rows mfa-kun mfa-rv">
+      <div class="mfa-row mfa-row--kv">
+        <div class="mfa-row-k">Visual language</div>
+        <div class="mfa-row-v">The visual language draws on sixteenth-century Ottoman sea charts, the portolans: an ink ground, bone-white type, a trace of vermilion.</div>
+      </div>
+      <div class="mfa-row mfa-row--kv">
+        <div class="mfa-row-k">Typefaces</div>
+        <div class="mfa-row-v">Instrument Serif, Geist, JetBrains Mono, served from our own server.</div>
+      </div>
+      <div class="mfa-row mfa-row--kv">
+        <div class="mfa-row-k">Privacy</div>
+        <div class="mfa-row-v">This site doesn't call out to font services, ad networks or trackers.</div>
+      </div>
+      <div class="mfa-row mfa-row--kv">
+        <div class="mfa-row-k">Motion</div>
+        <div class="mfa-row-v">Motion is CSS only. If you've asked your device to reduce motion, all of it stops.</div>
+      </div>
+      <div class="mfa-row mfa-row--kv">
+        <div class="mfa-row-k">Place</div>
+        <div class="mfa-row-v">Made in Istanbul.</div>
+      </div>
+      <div class="mfa-row mfa-row--kv">
+        <div class="mfa-row-k">For the curious</div>
+        <div class="mfa-row-v"><a href="#">/humans.txt</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="mfa-footer">
+  <svg class="mfa-seal mfa-foot-seal" width="44" height="44" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.5" pathLength="100" stroke-dasharray="84 7 16"/><path d="M8.4 14.8V9.2L12 12.4L15.6 9.2V14.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="19.78" cy="4.22" r="1.7" fill="#E5553B"/></svg>
+  <p class="mfa-foot-p1">A small team in Istanbul, building AI products.</p>
+  <p class="mfa-foot-p2">Health. Research. Coaching.</p>
+  <nav class="mfa-foot-links" aria-label="Footer menu">
+    <a href="health.html">Mafe Health</a><span class="mfa-sep">·</span><a href="research.html">Mafe Research</a><span class="mfa-sep">·</span><a href="coach.html">Mafe Coach</a><span class="mfa-sep">·</span><a href="garson.html">Garson</a><span class="mfa-sep">·</span><a href="pitch.html">Mafe Pitch</a><span class="mfa-sep">·</span><a href="contact.html">Contact</a><span class="mfa-sep">·</span><a href="tayfa.html">Crew</a>
+  </nav>
+  <p class="mfa-foot-c">© 2026 Mafe Studio. — Designed and built in Istanbul.<span class="mfa-foot-coord">41°02′N · 028°58′E</span></p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js" defer></script>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

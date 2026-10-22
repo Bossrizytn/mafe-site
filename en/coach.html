@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mafe Coach · Mafe Studio</title>
+<meta name="description" content="A mobile coach you log training, meals and supplements with by sending a message. Waitlist open.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Instrument+Serif:ital@1&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+/* ============ Mafe Coach — page-specific rules ============ */
+
+/* Hero: eyebrow + status tag layout */
+.mfa-hero .mfa-eyebrow{margin-bottom:18px;}
+
+/* Principle rows: ix / title / description */
+.mfa-rows--ilkeler{margin-top:48px;}
+.mfa-rows--ilkeler .mfa-row{grid-template-columns:72px minmax(0,300px) 1fr;}
+@media (max-width:940px){
+  .mfa-rows--ilkeler .mfa-row{grid-template-columns:56px 1fr auto;gap:8px 20px;}
+}
+
+/* Phone showcases (CHAT + PLAN) */
+.mfa-phones{display:grid;grid-template-columns:repeat(2,minmax(0,340px));justify-content:center;gap:24px;}
+.mfa-phones .mfa-ph-frame .mfa-ic{width:22px;height:22px;flex:0 0 22px;margin-top:0;opacity:.5;}
+.mfa-phones .mfa-ph-frame .mfa-ic svg{width:22px;height:22px;}
+@media (max-width:760px){
+  .mfa-phones{grid-template-columns:minmax(0,300px);}
+}
+
+/* Icon pill (submit button) */
+.mfa-pill--ic{display:inline-flex;align-items:center;gap:9px;}
+.mfa-pill--ic .mfa-ic{margin-top:0;width:15px;height:15px;flex:0 0 15px;opacity:1;color:#FFFFFF;}
+.mfa-pill--ic .mfa-ic svg{width:15px;height:15px;}
+</style>
+</head>
+<body>
+
+<nav class="mfa-nav" aria-label="Main menu">
+  <div class="mfa-nav-in">
+    <a class="mfa-brand" href="index.html" aria-label="Mafe Studio home page">
+      <svg class="mfa-seal" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.5" pathLength="100" stroke-dasharray="84 7 16"/><path d="M8.4 14.8V9.2L12 12.4L15.6 9.2V14.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="19.78" cy="4.22" r="1.7" fill="#E5553B"/></svg>
+      Mafe Studio
+    </a>
+    <div class="mfa-nav-links" id="mfa-menu">
+      <a href="index.html">Studio</a>
+      <a href="health.html">Health</a>
+      <a href="research.html">Finance</a>
+      <a href="coach.html" aria-current="page">Coaching</a>
+      <a href="garson.html">Food</a>
+      <a href="pitch.html">Training</a>
+    </div>
+    <div class="mfa-nav-right">
+      <span class="mfa-lang"><b>EN</b> / <a href="../coach.html">TR</a></span>
+      <a class="mfa-pill mfa-pill-ink mfa-pill-sm" href="contact.html">Contact</a>
+    </div>
+    <button class="mfa-burger" type="button" aria-expanded="false" aria-controls="mfa-menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ============ Hero ============ -->
+  <header class="mfa-hero">
+    <div class="mfa-hero-in">
+      <p class="mfa-eyebrow mfa-rv">MAFE COACH — ISTANBUL</p>
+      <p class="mfa-tag mfa-rv">WAITLIST OPEN</p>
+      <h1 class="mfa-h1 mfa-rv">Text your coach; <span class="mfa-i mfa-u">they'll</span> handle the rest.</h1>
+      <p class="mfa-hero-p mfa-rv">"Ran 5k, then oats." Mafe Coach logs it and adjusts the plan.</p>
+      <div class="mfa-hero-ctas mfa-rv">
+        <a class="mfa-pill mfa-pill-ink" href="#waitlist">Join the waitlist</a>
+        <a class="mfa-pill mfa-pill-ghost" href="#principles">See the principles</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ Exhibit 01 — Principles ============ -->
+  <section class="mfa-sec" id="principles">
+    <div class="mfa-col">
+      <div class="mfa-label mfa-rv">
+        <p class="mfa-label-tag">EXHIBIT 01 — PRINCIPLES</p>
+        <p class="mfa-label-note">No scolding, no guilt. It asks why and fixes the plan.</p>
+      </div>
+      <h2 class="mfa-rv">A coach that doesn't blame you.</h2>
+      <ul class="mfa-rows mfa-rows--ilkeler">
+        <li class="mfa-row mfa-rv">
+          <span class="mfa-row-ix">01</span>
+          <h3 class="mfa-row-t">Missed days are not a problem.</h3>
+          <p class="mfa-row-d">It asks what got in the way and rebuilds.</p>
+        </li>
+        <li class="mfa-row mfa-rv">
+          <span class="mfa-row-ix">02</span>
+          <h3 class="mfa-row-t">What you eat is not judged.</h3>
+          <p class="mfa-row-d">You say what you ate; it writes it down. No calorie lectures.</p>
+        </li>
+        <li class="mfa-row mfa-rv">
+          <span class="mfa-row-ix">03</span>
+          <h3 class="mfa-row-t">Supplements are logged, never recommended.</h3>
+          <p class="mfa-row-d">It tracks what you take. What to take is your doctor's call.</p>
+        </li>
+        <li class="mfa-row mfa-rv">
+          <span class="mfa-row-ix">04</span>
+          <h3 class="mfa-row-t">Few notifications.</h3>
+          <p class="mfa-row-d">It pings when it helps, not to keep you in the app.</p>
+        </li>
+        <li class="mfa-row mfa-rv">
+          <span class="mfa-row-ix">05</span>
+          <h3 class="mfa-row-t">No forms, just sentences.</h3>
+          <p class="mfa-row-d">"Ran 5k, then oats" — filed where it belongs.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ Exhibit 02 — App screens ============ -->
+  <section class="mfa-sec" aria-label="App screens">
+    <div class="mfa-col">
+      <div class="mfa-label mfa-rv">
+        <p class="mfa-label-tag">EXHIBIT 02 — CHAT</p>
+        <p class="mfa-label-note">A coach that works over text.</p>
+      </div>
+      <div class="mfa-phones">
+        <figure class="mfa-ph mfa-ph--phone mfa-rv">
+          <div class="mfa-ph-frame">
+            <span class="mfa-ic"><i data-lucide="message-circle" aria-hidden="true"></i></span>
+            <p class="mfa-ph-tag">CHAT SCREEN</p>
+            <p class="mfa-ph-note">To be added from the app.</p>
+          </div>
+          <figcaption class="mfa-case-cap">9:17 — MAFE COACH</figcaption>
+        </figure>
+        <figure class="mfa-ph mfa-ph--phone mfa-rv">
+          <div class="mfa-ph-frame">
+            <span class="mfa-ic"><i data-lucide="calendar-check" aria-hidden="true"></i></span>
+            <p class="mfa-ph-tag">PLAN SCREEN</p>
+            <p class="mfa-ph-note">To be added from the app.</p>
+          </div>
+          <figcaption class="mfa-case-cap">9:17 — MAFE COACH</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Market ============ -->
+  <section class="mfa-sec" id="market" aria-label="Market">
+    <div class="mfa-col">
+      <div class="mfa-label mfa-rv">
+        <p class="mfa-label-tag">EXHIBIT 03 — MARKET</p>
+        <p class="mfa-label-note">Tracking is common; coaching is expensive.</p>
+      </div>
+      <h2 class="mfa-rv">20 million athletes, few coaches.</h2>
+      <div class="mfa-stats mfa-stats--quad mfa-rv">
+        <div class="mfa-stat">
+          <p class="mfa-stat-n">20.3M</p>
+          <p class="mfa-stat-l">people in Turkey who train actively — 35%, 2024</p>
+        </div>
+        <div class="mfa-stat">
+          <p class="mfa-stat-n">33.6</p>
+          <p class="mfa-stat-l">billion USD — global fitness-app market, 2033 estimate</p>
+        </div>
+        <div class="mfa-stat">
+          <p class="mfa-stat-n">3.6B</p>
+          <p class="mfa-stat-l">health & fitness app downloads, 2024</p>
+        </div>
+        <div class="mfa-stat">
+          <p class="mfa-stat-n">221M</p>
+          <p class="mfa-stat-l">USD spent on AI companion apps, cumulative</p>
+        </div>
+      </div>
+      <p class="mfa-stats-meta mfa-rv">SOURCES: MACFIT ACTIVITY MAP, 2024 · GRAND VIEW RESEARCH, 2025 · STATISTA, 2025 · APPFIGURES, 2025 — PUBLIC DATA</p>
+    </div>
+  </section>
+
+  <!-- ============ Waitlist ============ -->
+  <section class="mfa-sec" id="waitlist">
+    <div class="mfa-col">
+      <div class="mfa-label mfa-rv">
+        <p class="mfa-label-tag">EARLY ACCESS</p>
+        <p class="mfa-label-note">Waitlist open.</p>
+      </div>
+      <h2 class="mfa-rv">Hear about it on launch day.</h2>
+      <form class="mfa-form mfa-rv" data-endpoint="https://formsubmit.co/ajax/hasbur.60@gmail.com" data-demo-success="#wl-ok" novalidate>
+      <input type="hidden" name="_subject" value="Mafe — Waitlist: Coach (EN)">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_honey" value="">
+        <div class="mfa-f mfa-f--full">
+          <label class="mfa-f-label" for="wl-mail">Email</label>
+          <input class="mfa-input" type="email" id="wl-mail" name="email" placeholder="you@example.com" required>
+        </div>
+        <div class="mfa-f mfa-f--full">
+          <label class="mfa-check"><input type="checkbox" required><span>I agree to my email being stored for launch news.</span></label>
+        </div>
+        <div class="mfa-form-actions">
+          <button class="mfa-pill mfa-pill-ink mfa-pill--ic" type="submit"><span class="mfa-ic"><i data-lucide="bell" aria-hidden="true"></i></span>Notify me</button>
+        </div>
+      </form>
+      <div class="mfa-success" id="wl-ok" hidden aria-live="polite">
+        <p class="mfa-success-t">You're on the list.</p>
+        <p class="mfa-success-p">We'll write on launch day. We won't bother you in between.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Legal ============ -->
+  <div class="mfa-legal mfa-rv">
+    <p>Mafe Coach is a logging and planning tool. It does not provide medical advice, diagnosis or treatment. For decisions about your health, diet or supplement use, talk to your doctor or a registered dietitian.</p>
+  </div>
+
+</main>
+
+<footer class="mfa-footer">
+  <svg class="mfa-seal mfa-foot-seal" width="44" height="44" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.5" pathLength="100" stroke-dasharray="84 7 16"/><path d="M8.4 14.8V9.2L12 12.4L15.6 9.2V14.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="19.78" cy="4.22" r="1.7" fill="#E5553B"/></svg>
+  <p class="mfa-foot-p1">A small team in Istanbul, building AI products.</p>
+  <p class="mfa-foot-p2">Health. Research. Coaching.</p>
+  <nav class="mfa-foot-links" aria-label="Footer menu">
+    <a href="health.html">Mafe Health</a><span class="mfa-sep">·</span><a href="research.html">Mafe Research</a><span class="mfa-sep">·</span><a href="coach.html">Mafe Coach</a><span class="mfa-sep">·</span><a href="garson.html">Garson</a><span class="mfa-sep">·</span><a href="pitch.html">Mafe Pitch</a><span class="mfa-sep">·</span><a href="contact.html">Contact</a><span class="mfa-sep">·</span><a href="tayfa.html">Crew</a>
+  </nav>
+  <p class="mfa-foot-c">© 2026 Mafe Studio. — Designed and built in Istanbul.<span class="mfa-foot-coord">41°02′N · 028°58′E</span></p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js" defer></script>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>İletişim · Mafe Studio</title>
+<meta name="description" content="Kliniğiniz, ürünlerimizden biri ya da bir iş birliği için yazın. En geç bir iş günü içinde cevap veriyoruz.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Instrument+Serif:ital@1&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* ---- contact.html'e özel kurallar ---- */
+
+/* Bu sayfanın herosu ana sayfaya göre biraz daha kısa. */
+.mfa-hero{padding:104px 24px 88px;}
+
+/* Form bölümü heronun hemen altında; üst nefesi biraz kıs. */
+.mfa-sec{padding-top:88px;}
+
+/* Duvar etiketi ile form arasındaki boşluğu formun kendi
+   margin-top'una (56px) bırak; çifte boşluk olmasın. */
+.mfa-label{margin-bottom:0;}
+
+@media (max-width:760px){
+  .mfa-hero{padding:84px 20px 64px;}
+  .mfa-sec{padding-top:64px;}
+}
+</style>
+</head>
+<body>
+
+<nav class="mfa-nav" aria-label="Üst menü">
+  <div class="mfa-nav-in">
+    <a class="mfa-brand" href="index.html" aria-label="Mafe Studio ana sayfa">
+      <svg class="mfa-seal" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.5" pathLength="100" stroke-dasharray="84 7 16"/><path d="M8.4 14.8V9.2L12 12.4L15.6 9.2V14.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="19.78" cy="4.22" r="1.7" fill="#E5553B"/></svg>
+      Mafe Studio
+    </a>
+    <div class="mfa-nav-links" id="mfa-menu">
+      <a href="index.html">Studio</a>
+      <a href="health.html">Sağlık</a>
+      <a href="research.html">Finans</a>
+      <a href="coach.html">Koçluk</a>
+      <a href="garson.html">Yemek</a>
+      <a href="pitch.html">Antrenman</a>
+    </div>
+    <div class="mfa-nav-right">
+      <span class="mfa-lang"><b>TR</b> / <a href="en/contact.html">EN</a></span>
+      <a class="mfa-pill mfa-pill-ink mfa-pill-sm" href="contact.html" aria-current="page">İletişim</a>
+    </div>
+    <button class="mfa-burger" type="button" aria-expanded="false" aria-controls="mfa-menu" aria-label="Menüyü aç"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<main>
+
+  <header class="mfa-hero mfa-rv">
+    <div class="mfa-hero-in">
+      <p class="mfa-eyebrow">İLETİŞİM — İSTANBUL</p>
+      <h1 class="mfa-h1">Bir insana <span class="mfa-i mfa-u">yazıyorsunuz.</span></h1>
+      <p class="mfa-hero-p">Kliniğiniz, ürünlerimizden biri ya da bir iş birliği için yazın. En geç bir iş günü içinde cevap veriyoruz.</p>
+    </div>
+  </header>
+
+  <section class="mfa-sec">
+    <div class="mfa-col">
+
+      <div class="mfa-label mfa-rv">
+        <p class="mfa-label-tag">FORM — BİR İŞ GÜNÜ</p>
+        <p class="mfa-label-note">Yanıt bir insanından gelir.</p>
+      </div>
+
+      <form class="mfa-form mfa-rv" data-endpoint="https://formsubmit.co/ajax/hasbur.60@gmail.com" data-demo-success="#ct-ok">
+      <input type="hidden" name="_subject" value="Mafe — İletişim formu (TR)">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_honey" value="">
+        <div class="mfa-fgrid">
+          <div class="mfa-f">
+            <label class="mfa-f-label" for="f-clinic">Klinik / şirket adı</label>
+            <input class="mfa-input" id="f-clinic" name="clinic_name" autocomplete="organization" placeholder="Öz Klinik A.Ş." minlength="2" maxlength="128" required>
+          </div>
+          <div class="mfa-f">
+            <label class="mfa-f-label" for="f-person">İletişim kişisi</label>
+            <input class="mfa-input" id="f-person" name="contact_name" autocomplete="name" maxlength="128" placeholder="Dr. Ayşe Yılmaz">
+          </div>
+          <div class="mfa-f">
+            <label class="mfa-f-label" for="f-mail">E-posta</label>
+            <input class="mfa-input" type="email" id="f-mail" name="email" autocomplete="email" maxlength="254" placeholder="dr@klinik.com">
+          </div>
+          <div class="mfa-f">
+            <label class="mfa-f-label" for="f-tel">Telefon</label>
+            <input class="mfa-input" type="tel" id="f-tel" name="phone" autocomplete="tel" inputmode="tel" maxlength="32" placeholder="+90 …">
+            <span class="mfa-f-hint">E-posta veya telefondan biri yeterli.</span>
+          </div>
+          <div class="mfa-f">
+            <label class="mfa-f-label" for="f-topic">İlgi alanı</label>
+            <select class="mfa-input" id="f-topic" name="vertical">
+              <option value="hair">Saç ekimi</option>
+              <option value="dental">Diş tedavisi</option>
+              <option value="aesthetic">Estetik cerrahi</option>
+              <option value="other" selected>Diğer / emin değilim</option>
+            </select>
+          </div>
+          <div class="mfa-f">
+            <label class="mfa-f-label" for="f-volume">Aylık hasta adayı (tahmini)</label>
+            <input class="mfa-input" type="number" id="f-volume" name="monthly_volume" min="0" max="100000" placeholder="örn. 40">
+          </div>
+          <div class="mfa-f mfa-f--full">
+            <label class="mfa-f-label" for="f-msg">Mesajınız</label>
+            <textarea class="mfa-input" id="f-msg" name="message" rows="4" maxlength="2000" placeholder="Ne yapmak istediğinizi bir iki cümleyle yazın. Kısa olması sorun değil."></textarea>
+          </div>
+        </div>
+        <div class="mfa-hp" aria-hidden="true"><label>Web siteniz<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+        <div class="mfa-f mfa-f--full" style="margin-top:22px">
+          <label class="mfa-check"><input type="checkbox" name="consent" required><span>Bu formu göndererek, verdiğim bilgilerin bana dönüş yapmak için işlenmesine izin veriyorum.</span></label>
+        </div>
+        <div class="mfa-form-actions">
+          <button class="mfa-pill mfa-pill-ink" type="submit">Gönder</button>
+          <span class="mfa-form-note">Ücretsiz. Kart bilgisi istenmez.</span>
+        </div>
+      </form>
+
+      <div class="mfa-success" id="ct-ok" hidden>
+        <p class="mfa-success-t">Mesajınız elimizde.</p>
+        <p class="mfa-success-p">Mesajınız bize ulaştı. En geç bir iş günü içinde döneriz.</p>
+      </div>
+
+      <p class="mfa-stats-meta">BİR İŞ GÜNÜ İÇİNDE DÖNÜYORUZ</p>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="mfa-footer">
+  <svg class="mfa-seal mfa-foot-seal" width="44" height="44" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.5" pathLength="100" stroke-dasharray="84 7 16"/><path d="M8.4 14.8V9.2L12 12.4L15.6 9.2V14.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="19.78" cy="4.22" r="1.7" fill="#E5553B"/></svg>
+  <p class="mfa-foot-p1">İstanbul'da yapay zekâ ürünleri yapan küçük bir ekip.</p>
+  <p class="mfa-foot-p2">Sağlık, araştırma, koçluk.</p>
+  <nav class="mfa-foot-links" aria-label="Alt menü">
+    <a href="health.html">Mafe Health</a><span class="mfa-sep">·</span><a href="research.html">Mafe Research</a><span class="mfa-sep">·</span><a href="coach.html">Mafe Coach</a><span class="mfa-sep">·</span><a href="garson.html">Garson</a><span class="mfa-sep">·</span><a href="pitch.html">Mafe Pitch</a><span class="mfa-sep">·</span><a href="contact.html">İletişim</a><span class="mfa-sep">·</span><a href="tayfa.html">Tayfa</a>
+  </nav>
+  <p class="mfa-foot-c">© 2026 Mafe Studio. — İstanbul'da tasarlandı ve geliştirildi.<span class="mfa-foot-coord">41°02′N · 028°58′E</span></p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js" defer></script>
+<script src="assets/site.js" defer></script>
+</body>
+</html>
