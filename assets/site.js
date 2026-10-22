@@ -137,7 +137,36 @@
     });
   });
 
-  /* ---- Lucide ikonları (CDN'den geldiyse) ---- */
-  function icons() { if (window.lucide && window.lucide.createIcons) { window.lucide.createIcons({ attrs: { 'stroke-width': 1.75 } }); } }
+  /* ---- İkonlar: gömülü SVG seti (dış bağımlılık yok) ---- */
+  var ICONS = {
+    'arrow-right': '<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',
+    'bell': '<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>',
+    'calendar-check': '<path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/>',
+    'check': '<path d="M20 6 9 17l-5-5"/>',
+    'list-checks': '<path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/>',
+    'message-circle': '<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>',
+    'minus': '<path d="M5 12h14"/>',
+    'play': '<polygon points="6 3 20 12 6 21 6 3"/>',
+    'share-2': '<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/>'
+  };
+  function icons() {
+    Array.prototype.forEach.call(document.querySelectorAll('i[data-lucide]'), function (el) {
+      var body = ICONS[el.getAttribute('data-lucide')];
+      if (!body) return;
+      var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      svg.setAttribute('viewBox', '0 0 24 24');
+      svg.setAttribute('fill', 'none');
+      svg.setAttribute('stroke', 'currentColor');
+      svg.setAttribute('stroke-width', '1.75');
+      svg.setAttribute('stroke-linecap', 'round');
+      svg.setAttribute('stroke-linejoin', 'round');
+      svg.setAttribute('aria-hidden', 'true');
+      Array.prototype.forEach.call(el.attributes, function (a) {
+        if (a.name !== 'data-lucide') svg.setAttribute(a.name, a.value);
+      });
+      svg.innerHTML = body;
+      el.replaceWith(svg);
+    });
+  }
   if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', icons); } else { icons(); }
 })();
